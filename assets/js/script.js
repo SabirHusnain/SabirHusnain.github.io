@@ -137,25 +137,65 @@ async function initApp() {
         }
       }
       requestAnimationFrame(animateCanvas);
-      
     }
 
     initParticles();
     animateCanvas();
   }
 
-  // 7. Formspree AJAX Submission Handler
+  // 7. Beautiful Animated Toast Notification Function
+  function showToast(message) {
+    // Create the toast container dynamically
+    const toast = document.createElement("div");
+
+    // Tailwind classes for a sleek, dark-mode card that starts hidden
+    toast.className =
+      "fixed bottom-8 right-8 bg-card border border-slate-700/50 border-l-4 border-l-green-500 px-6 py-4 rounded-xl shadow-[0_10px_40px_-10px_rgba(34,197,94,0.3)] flex items-center z-[100] transform transition-all duration-500 translate-y-12 opacity-0 glass";
+
+    // The HTML inside the toast (Green checkmark icon + text)
+    toast.innerHTML = `
+      <i class="fas fa-check-circle text-green-400 text-2xl mr-4 drop-shadow-[0_0_8px_rgba(34,197,94,0.8)]"></i>
+      <div>
+        <h4 class="font-bold text-white text-md tracking-wide">Success</h4>
+        <p class="text-sm text-slate-300 mt-0.5">${message}</p>
+      </div>
+    `;
+
+    // Add it to the page
+    document.body.appendChild(toast);
+
+    // Trigger the slide-in animation slightly after it's added to the DOM
+    setTimeout(() => {
+      toast.classList.remove("translate-y-12", "opacity-0");
+      toast.classList.add("translate-y-0", "opacity-100");
+    }, 100);
+
+    // Trigger the slide-out animation after 5 seconds, then remove the code
+    setTimeout(() => {
+      toast.classList.remove("translate-y-0", "opacity-100");
+      toast.classList.add("translate-y-12", "opacity-0");
+
+      // Remove element from DOM after animation finishes
+      setTimeout(() => {
+        toast.remove();
+      }, 500);
+    }, 5000);
+  }
+
+  // 8. Formspree AJAX Submission Handler (Updated to use the Toast)
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", async function (event) {
       event.preventDefault(); // Stop the browser from redirecting
 
-      const data = new FormData(contactForm);
+      // Temporarily change button text to show loading state
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalBtnHtml = submitBtn.innerHTML;
+      submitBtn.innerHTML =
+        '<i class="fas fa-circle-notch fa-spin mr-2"></i> Sending...';
+      submitBtn.disabled = true;
 
-      // Find the success message div (handles both home and contact pages)
-      const successMsg =
-        document.getElementById("success-msg") ||
-        document.getElementById("success-msg-home");
+      const data = new FormData(contactForm);
 
       try {
         const response = await fetch(contactForm.action, {
@@ -167,19 +207,18 @@ async function initApp() {
         });
 
         if (response.ok) {
-          // Show success message and clear the form
-          if (successMsg) successMsg.classList.remove("hidden");
+          // Trigger the beautiful animated toast
+          showToast("I have received your message and will reply soon.");
           contactForm.reset();
-
-          // Optional: Hide the message again after 5 seconds
-          setTimeout(() => {
-            if (successMsg) successMsg.classList.add("hidden");
-          }, 5000);
         } else {
           alert("Oops! There was a problem submitting your form.");
         }
       } catch (error) {
         alert("Oops! There was a problem submitting your form.");
+      } finally {
+        // Restore button state
+        submitBtn.innerHTML = originalBtnHtml;
+        submitBtn.disabled = false;
       }
     });
   }
