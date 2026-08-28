@@ -1,3 +1,11 @@
+// --- Theme Initializer (Runs immediately to prevent flashing) ---
+const userTheme = localStorage.getItem("theme");
+if (userTheme === "light") {
+  document.documentElement.classList.add("light");
+} else {
+  document.documentElement.classList.remove("light"); // Default is dark
+}
+
 // Function to load external HTML components
 async function loadComponent(elementId, filePath) {
   try {
@@ -14,31 +22,58 @@ async function loadComponent(elementId, filePath) {
 
 // Main initialization function
 async function initApp() {
-  // 1. Initialize AOS Animations IMMEDIATELY so content is never stuck hidden
   if (typeof AOS !== "undefined") {
     AOS.init({ once: true, offset: 50, duration: 800 });
   }
 
-  // 2. Await the Navbar injection
+  // Await the Component injections
   if (document.getElementById("navbar-placeholder")) {
     await loadComponent("navbar-placeholder", "components/navbar.html");
   }
-
-  // 3. Await the Footer injection
   if (document.getElementById("footer-placeholder")) {
     await loadComponent("footer-placeholder", "components/footer.html");
-
-    // Set dynamic year only after footer is injected
     const yearSpan = document.getElementById("year");
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
   }
 
-  // Refresh AOS just in case the newly injected components have animations
-  if (typeof AOS !== "undefined") {
-    AOS.refresh();
+  if (typeof AOS !== "undefined") AOS.refresh();
+
+  // --- Theme Toggle Logic ---
+  const toggleButtons = [
+    document.getElementById("theme-toggle-desktop"),
+    document.getElementById("theme-toggle-mobile"),
+  ];
+  const lightIcons = document.querySelectorAll(".light-icon");
+  const darkIcons = document.querySelectorAll(".dark-icon");
+
+  function updateThemeUI() {
+    const isLight = document.documentElement.classList.contains("light");
+    if (isLight) {
+      lightIcons.forEach((icon) => icon.classList.remove("hidden"));
+      darkIcons.forEach((icon) => icon.classList.add("hidden"));
+    } else {
+      lightIcons.forEach((icon) => icon.classList.add("hidden"));
+      darkIcons.forEach((icon) => icon.classList.remove("hidden"));
+    }
   }
 
-  // 4. Initialize Mobile Menu
+  updateThemeUI(); // Run once to set the correct icon on load
+
+  toggleButtons.forEach((btn) => {
+    if (btn) {
+      btn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("light");
+        if (document.documentElement.classList.contains("light")) {
+          localStorage.setItem("theme", "light");
+        } else {
+          localStorage.setItem("theme", "dark");
+        }
+        updateThemeUI();
+      });
+    }
+  });
+
+  // Mobile Menu Logic
   const mobileBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
 
@@ -46,8 +81,6 @@ async function initApp() {
     mobileBtn.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
     });
-
-    // Close mobile menu on link click
     document.querySelectorAll("#mobile-menu a").forEach((link) => {
       link.addEventListener("click", () => {
         mobileMenu.classList.add("hidden");
@@ -55,21 +88,26 @@ async function initApp() {
     });
   }
 
-  // 5. Sticky Navbar Background Logic
+  // Sticky Navbar Background Logic (Adapted for Themes)
   const navbar = document.getElementById("navbar");
   if (navbar) {
     window.addEventListener("scroll", () => {
+      const isLight = document.documentElement.classList.contains("light");
       if (window.scrollY > 50) {
         navbar.classList.add("shadow-lg");
-        navbar.style.background = "rgba(15, 23, 42, 0.9)";
+        navbar.style.background = isLight
+          ? "rgba(255, 255, 255, 0.95)"
+          : "rgba(15, 23, 42, 0.9)";
       } else {
         navbar.classList.remove("shadow-lg");
-        navbar.style.background = "rgba(30, 41, 59, 0.7)";
+        navbar.style.background = isLight
+          ? "rgba(248, 250, 252, 0.7)"
+          : "rgba(30, 41, 59, 0.7)";
       }
     });
   }
 
-  // 6. Home Page Canvas Animation
+  // Home Page Canvas Animation
   const canvas = document.getElementById("hero-canvas");
   if (canvas) {
     const ctx = canvas.getContext("2d");
@@ -77,7 +115,6 @@ async function initApp() {
 
     function resizeCanvas() {
       width = canvas.width = window.innerWidth;
-      // Safely check for the home section, otherwise fallback to window height
       const homeSection = document.getElementById("home");
       height = canvas.height = homeSection
         ? homeSection.offsetHeight
@@ -104,7 +141,7 @@ async function initApp() {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(6, 182, 212, 0.5)";
+        ctx.fillStyle = "rgba(6, 182, 212, 0.5)"; // Cyan color looks great on dark AND light
         ctx.fill();
       }
     }
@@ -143,16 +180,12 @@ async function initApp() {
     animateCanvas();
   }
 
-  // 7. Beautiful Animated Toast Notification Function
+  // Beautiful Animated Toast Notification Function
   function showToast(message) {
-    // Create the toast container dynamically
     const toast = document.createElement("div");
-
-    // Tailwind classes for a sleek, dark-mode card that starts hidden
     toast.className =
       "fixed bottom-8 right-8 bg-card border border-slate-700/50 border-l-4 border-l-green-500 px-6 py-4 rounded-xl shadow-[0_10px_40px_-10px_rgba(34,197,94,0.3)] flex items-center z-[100] transform transition-all duration-500 translate-y-12 opacity-0 glass";
 
-    // The HTML inside the toast (Green checkmark icon + text)
     toast.innerHTML = `
       <i class="fas fa-check-circle text-green-400 text-2xl mr-4 drop-shadow-[0_0_8px_rgba(34,197,94,0.8)]"></i>
       <div>
@@ -160,35 +193,27 @@ async function initApp() {
         <p class="text-sm text-slate-300 mt-0.5">${message}</p>
       </div>
     `;
-
-    // Add it to the page
     document.body.appendChild(toast);
 
-    // Trigger the slide-in animation slightly after it's added to the DOM
     setTimeout(() => {
       toast.classList.remove("translate-y-12", "opacity-0");
       toast.classList.add("translate-y-0", "opacity-100");
     }, 100);
 
-    // Trigger the slide-out animation after 5 seconds, then remove the code
     setTimeout(() => {
       toast.classList.remove("translate-y-0", "opacity-100");
       toast.classList.add("translate-y-12", "opacity-0");
-
-      // Remove element from DOM after animation finishes
       setTimeout(() => {
         toast.remove();
       }, 500);
     }, 5000);
   }
 
-  // 8. Formspree AJAX Submission Handler (Updated to use the Toast)
+  // Formspree AJAX Submission Handler
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", async function (event) {
-      event.preventDefault(); // Stop the browser from redirecting
-
-      // Temporarily change button text to show loading state
+      event.preventDefault();
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalBtnHtml = submitBtn.innerHTML;
       submitBtn.innerHTML =
@@ -201,13 +226,10 @@ async function initApp() {
         const response = await fetch(contactForm.action, {
           method: contactForm.method,
           body: data,
-          headers: {
-            Accept: "application/json",
-          },
+          headers: { Accept: "application/json" },
         });
 
         if (response.ok) {
-          // Trigger the beautiful animated toast
           showToast("I have received your message and will reply soon.");
           contactForm.reset();
         } else {
@@ -216,7 +238,6 @@ async function initApp() {
       } catch (error) {
         alert("Oops! There was a problem submitting your form.");
       } finally {
-        // Restore button state
         submitBtn.innerHTML = originalBtnHtml;
         submitBtn.disabled = false;
       }
@@ -224,7 +245,6 @@ async function initApp() {
   }
 }
 
-// Bulletproof event listener: Runs correctly whether the browser loads the script early or late
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initApp);
 } else {
