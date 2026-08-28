@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabir Husnain | Projects</title>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Outfit", "sans-serif"],
+            },
+            colors: {
+              dark: "#0f172a",
+              darker: "#020617",
+              card: "#1e293b",
+              primary: "#06b6d4",
+              secondary: "#3b82f6",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-darker text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white"
+  >
+    <!-- LINKED NAVBAR -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- UPGRADED PAGE HEADER (Consistent with About Page) -->
+    <header
+      class="page-header relative pt-32 pb-20 bg-darker border-b border-slate-800/50 overflow-hidden"
+    >
+      <!-- Graphic Elements -->
+      <div class="absolute inset-0 z-0 opacity-20">
+        <svg class="absolute h-full w-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern
+              id="grid-pattern"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M0 40V0H40"
+                fill="none"
+                stroke="#06b6d4"
+                stroke-width="0.5"
+                stroke-opacity="0.3"
+              ></path>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid-pattern)"></rect>
+        </svg>
+      </div>
+
+      <!-- Glowing Orbs -->
+      <div
+        class="absolute top-10 left-10 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-[100px] opacity-20 z-0"
+      ></div>
+      <div
+        class="absolute bottom-10 right-10 w-64 h-64 bg-secondary rounded-full mix-blend-multiply filter blur-[100px] opacity-20 z-0"
+      ></div>
+
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between"
+      >
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1
+            class="text-sm font-bold text-primary tracking-widest uppercase mb-3 flex items-center justify-center md:justify-start"
+            data-aos="fade-down"
+          >
+            <i class="fas fa-laptop-code mr-2"></i> Portfolio & R&D
+          </h1>
+          <h2
+            class="text-4xl md:text-6xl font-heading font-bold text-white mb-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Projects
+          </h2>
+          <p
+            class="text-slate-400 text-lg leading-relaxed max-w-lg mx-auto md:mx-0"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Exploring practical applications of control architectures, motion
+            capture systems, reinforcement learning, and autonomous robotics.
+          </p>
+        </div>
+
+        <!-- Abstract Header Graphic -->
+        <div
+          class="md:w-1/2 flex justify-center md:justify-end"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
+          <div class="relative w-48 h-48 md:w-64 md:h-64">
+            <div
+              class="absolute inset-0 border-2 border-primary rounded-lg rotate-12 opacity-50"
+            ></div>
+            <div
+              class="absolute inset-0 border-2 border-secondary rounded-lg -rotate-6 opacity-50"
+            ></div>
+            <div
+              class="absolute inset-0 bg-card border border-slate-700 rounded-lg shadow-2xl flex items-center justify-center glass"
+            >
+              <i
+                class="fas fa-project-diagram text-6xl md:text-8xl text-primary opacity-80"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="py-20 bg-dark relative z-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h3 class="text-3xl font-heading font-bold text-white mb-4">
+            Academic & Research Portfolio
+          </h3>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"
+          ></div>
+        </div>
+
+        <!-- Projects Grid (Aligned with items-stretch) -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
+        >
+          <!-- Project 1 -->
+          <div
+            class="bg-card rounded-2xl overflow-hidden border border-slate-700/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group flex flex-col h-full shadow-xl"
+            data-aos="fade-up"
+          >
+            <div
+              class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fas fa-walking text-6xl text-slate-700 group-hover:text-primary transition-colors duration-300 z-10"
+              ></i>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-0"
+              ></div>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h4 class="text-xl font-bold text-white mb-2">
+                BIGKAT (Motion Capture)
+              </h4>
+              <p class="text-sm text-slate-400 mb-6 flex-grow">
+                Low-cost, portable motion capture system for gross motor
+                movement assessment. Uses IR markers, ML models to analyze
+                Bradykinesia, and PyQt5 GUI. (Funded by Ignite)
+              </p>
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Python</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Machine Learning</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Computer Vision</span
+                  >
+                </div>
+                <span class="text-sm text-primary font-medium">
+                  <i class="fab fa-github mr-1"></i> Private Repo (Request
+                  Access)
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="bg-card rounded-2xl overflow-hidden border border-slate-700/50 hover:border-secondary/50 transition-all duration-300 hover:-translate-y-2 group flex flex-col h-full shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fas fa-robot text-6xl text-slate-700 group-hover:text-secondary transition-colors duration-300 z-10"
+              ></i>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-0"
+              ></div>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h4 class="text-xl font-bold text-white mb-2">
+                RL Humanoid Robot Control
+              </h4>
+              <p class="text-sm text-slate-400 mb-6 flex-grow">
+                Simulation of humanoid robot control and path generation
+                employing reinforcement-learning to train the control policy,
+                enabling real-time adaptation.
+              </p>
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Reinforcement Learning</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Simulation</span
+                  >
+                </div>
+                <a
+                  href="https://github.com/sabirhusnain577/RL-Human.git"
+                  target="_blank"
+                  class="text-sm text-secondary hover:text-white transition-colors font-medium inline-flex items-center"
+                >
+                  <i class="fab fa-github mr-1"></i> View Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="bg-card rounded-2xl overflow-hidden border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-2 group flex flex-col h-full shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fas fa-car-side text-6xl text-slate-700 group-hover:text-purple-400 transition-colors duration-300 z-10"
+              ></i>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-0"
+              ></div>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h4 class="text-xl font-bold text-white mb-2">
+                Autonomous Mobile Robot
+              </h4>
+              <p class="text-sm text-slate-400 mb-6 flex-grow">
+                Differential drive robot with feed-forward neural network and
+                PID control. Employed genetic algorithm to optimize NN
+                parameters for optimized path planning.
+              </p>
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Neural Networks</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Genetic Algorithm</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >MATLAB</span
+                  >
+                </div>
+                <a
+                  href="https://github.com/sabirhusnain577/NnGa-Robot.git"
+                  target="_blank"
+                  class="text-sm text-purple-400 hover:text-white transition-colors font-medium inline-flex items-center"
+                >
+                  <i class="fab fa-github mr-1"></i> View Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div
+            class="bg-card rounded-2xl overflow-hidden border border-slate-700/50 hover:border-green-400/50 transition-all duration-300 hover:-translate-y-2 group flex flex-col h-full shadow-xl"
+            data-aos="fade-up"
+          >
+            <div
+              class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fas fa-balance-scale text-6xl text-slate-700 group-hover:text-green-400 transition-colors duration-300 z-10"
+              ></i>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-0"
+              ></div>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h4 class="text-xl font-bold text-white mb-2">
+                Inverted Pendulum Control
+              </h4>
+              <p class="text-sm text-slate-400 mb-6 flex-grow">
+                Dynamic modelling, PID, LQR & state feedback control of inverted
+                pendulum and cart using low-cost IMU. Custom firmware
+                development on ESP32.
+              </p>
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >LQR/PID</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >ESP32</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Firmware</span
+                  >
+                </div>
+                <a
+                  href="https://github.com/sabirhusnain577/IP-Control.git"
+                  target="_blank"
+                  class="text-sm text-green-400 hover:text-white transition-colors font-medium inline-flex items-center"
+                >
+                  <i class="fab fa-github mr-1"></i> View Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div
+            class="bg-card rounded-2xl overflow-hidden border border-slate-700/50 hover:border-yellow-400/50 transition-all duration-300 hover:-translate-y-2 group flex flex-col h-full shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fas fa-hand-paper text-6xl text-slate-700 group-hover:text-yellow-400 transition-colors duration-300 z-10"
+              ></i>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-0"
+              ></div>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h4 class="text-xl font-bold text-white mb-2">
+                4-DOF Robotic Manipulator
+              </h4>
+              <p class="text-sm text-slate-400 mb-6 flex-grow">
+                Dynamic controller design, obstacle avoidance path planning
+                using Probabilistic Road Maps (PRM) and A* Algorithm, and
+                optimized trajectory generation.
+              </p>
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Kinematics</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Path Planning</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >MATLAB</span
+                  >
+                </div>
+                <a
+                  href="https://github.com/sabirhusnain577/Torque-Optimized-Arm.git"
+                  target="_blank"
+                  class="text-sm text-yellow-400 hover:text-white transition-colors font-medium inline-flex items-center"
+                >
+                  <i class="fab fa-github mr-1"></i> View Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div
+            class="bg-card rounded-2xl overflow-hidden border border-slate-700/50 hover:border-pink-500/50 transition-all duration-300 hover:-translate-y-2 group flex flex-col h-full shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fas fa-fish text-6xl text-slate-700 group-hover:text-pink-500 transition-colors duration-300 z-10"
+              ></i>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-0"
+              ></div>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h4 class="text-xl font-bold text-white mb-2">
+                Underwater Robot via ABC
+              </h4>
+              <p class="text-sm text-slate-400 mb-6 flex-grow">
+                Mathematical modelling of kinematics and non-linear dynamics.
+                Designed 2-DOF PID controller tuned using Artificial Bee Colony
+                (ABC) algorithm.
+              </p>
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Non-linear Dynamics</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Optimization (ABC)</span
+                  >
+                </div>
+                <a
+                  href="https://github.com/sabirhusnain577/ABC-UAV.git"
+                  target="_blank"
+                  class="text-sm text-pink-500 hover:text-white transition-colors font-medium inline-flex items-center"
+                >
+                  <i class="fab fa-github mr-1"></i> View Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-16 text-center" data-aos="fade-up">
+          <a
+            href="https://github.com/SabirHusnain"
+            target="_blank"
+            class="inline-flex items-center px-6 py-3 rounded-full bg-slate-800 border border-slate-700 text-primary hover:bg-primary hover:text-white font-medium transition-all shadow-lg"
+          >
+            View more projects on GitHub <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- LINKED FOOTER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Local JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+/* Gradient Text Utility */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #06b6d4, #3b82f6);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Timeline styles */
+.timeline-dot::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #06b6d4;
+  border: 3px solid #020617;
+}
+
+/* Shared Header for Internal Pages */
+.page-header {
+  position: relative;
+  padding-top: 8rem; /* Creates space for the fixed navbar */
+  padding-bottom: 4rem;
+  background-color: #020617; /* Matches your darker theme */
+  border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Subtle background accent for internal pages */
+.page-header::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 0.1) 0%,
+    rgba(2, 6, 23, 0) 70%
+  );
+  z-index: 0;
+}
+
+.page-header-content {
+  position: relative;
+  z-index: 10;
+}

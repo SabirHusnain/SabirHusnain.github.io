@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabir Husnain | Research</title>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Outfit", "sans-serif"],
+            },
+            colors: {
+              dark: "#0f172a",
+              darker: "#020617",
+              card: "#1e293b",
+              primary: "#06b6d4",
+              secondary: "#3b82f6",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-darker text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white"
+  >
+    <!-- LINKED NAVBAR -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- UPGRADED PAGE HEADER -->
+    <header
+      class="page-header relative pt-32 pb-20 bg-darker border-b border-slate-800/50 overflow-hidden"
+    >
+      <!-- Graphic Elements -->
+      <div class="absolute inset-0 z-0 opacity-20">
+        <svg class="absolute h-full w-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern
+              id="grid-pattern"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M0 40V0H40"
+                fill="none"
+                stroke="#06b6d4"
+                stroke-width="0.5"
+                stroke-opacity="0.3"
+              ></path>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid-pattern)"></rect>
+        </svg>
+      </div>
+
+      <!-- Glowing Orbs -->
+      <div
+        class="absolute top-10 left-10 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-[100px] opacity-20 z-0"
+      ></div>
+      <div
+        class="absolute bottom-10 right-10 w-64 h-64 bg-secondary rounded-full mix-blend-multiply filter blur-[100px] opacity-20 z-0"
+      ></div>
+
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between"
+      >
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+          <h1
+            class="text-sm font-bold text-primary tracking-widest uppercase mb-3 flex items-center justify-center md:justify-start"
+            data-aos="fade-down"
+          >
+            <i class="fas fa-microscope mr-2"></i> Academic Contributions
+          </h1>
+          <h2
+            class="text-4xl md:text-6xl font-heading font-bold text-white mb-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Research
+          </h2>
+          <p
+            class="text-slate-400 text-lg leading-relaxed max-w-lg mx-auto md:mx-0"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Advancing the frontiers of autonomous systems through robust state
+            estimation, model-free control, and intelligent mechatronics.
+          </p>
+        </div>
+
+        <!-- Abstract Header Graphic -->
+        <div
+          class="md:w-1/2 flex justify-center md:justify-end"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
+          <div class="relative w-48 h-48 md:w-64 md:h-64">
+            <div
+              class="absolute inset-0 border-2 border-primary rounded-lg rotate-12 opacity-50"
+            ></div>
+            <div
+              class="absolute inset-0 border-2 border-secondary rounded-lg -rotate-6 opacity-50"
+            ></div>
+            <div
+              class="absolute inset-0 bg-card border border-slate-700 rounded-lg shadow-2xl flex items-center justify-center glass"
+            >
+              <i
+                class="fas fa-flask text-6xl md:text-8xl text-primary opacity-80"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="py-20 bg-dark relative z-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- NEW SECTION: Current Research Focus -->
+        <div class="mb-24" data-aos="fade-up">
+          <div
+            class="bg-card p-8 md:p-12 rounded-2xl border border-slate-700/50 shadow-2xl relative overflow-hidden"
+          >
+            <!-- Decorative background element inside card -->
+            <div class="absolute -right-20 -top-20 opacity-5">
+              <i class="fas fa-atom text-[250px] text-primary"></i>
+            </div>
+
+            <div class="relative z-10">
+              <h3
+                class="text-xl text-primary font-bold tracking-wider uppercase mb-2"
+              >
+                Current Academic Focus
+              </h3>
+              <h4 class="text-3xl font-heading font-bold text-white mb-6">
+                University of Vermont Doctoral Research
+              </h4>
+
+              <div
+                class="prose prose-invert max-w-none text-slate-300 leading-relaxed space-y-4"
+              >
+                <p>
+                  I am currently conducting academic research under the
+                  supervision of Professor Luis Duffaut Espinosa at the
+                  University of Vermont. My primary focus lies in bridging
+                  complex mathematical theory with physical hardware
+                  implementations.
+                </p>
+                <p>
+                  A major cornerstone of my recent work involves designing a
+                  model-free formation control framework for decoupled
+                  multi-agent systems, featuring active disturbance estimation.
+                  I recently authored the research paper
+                  <em
+                    >"Decoupled Robust State Estimation and Disturbance
+                    Rejection in Model-Free Formation Control"</em
+                  >, detailing architectures designed to handle uncertainty in
+                  multi-agent robotics.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Title -->
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h3 class="text-3xl font-heading font-bold text-white mb-4">
+            Peer-Reviewed Publications
+          </h3>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"
+          ></div>
+        </div>
+
+        <div class="space-y-6 max-w-5xl mx-auto">
+          <!-- Pub 1 -->
+          <div
+            class="bg-card p-6 md:p-8 rounded-xl border-l-4 border-green-500 shadow-lg hover:-translate-y-1 transition-transform duration-300"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start justify-between flex-wrap gap-4">
+              <div class="max-w-3xl">
+                <h4 class="text-xl font-bold text-white mb-2">
+                  Fractional Order Modeling and Control of an Articulated
+                  Robotic Arm
+                </h4>
+                <p class="text-sm text-slate-300 mb-2">
+                  <strong>S. Husnain</strong> and R. Abdulkader
+                </p>
+                <p class="text-sm text-slate-400 font-serif italic">
+                  Eng. Technol. Appl. Sci. Res., vol. 13, no. 6, pp.
+                  12026-12032, Dec. 2023.
+                </p>
+              </div>
+              <span
+                class="px-4 py-1.5 bg-green-500/10 text-green-400 text-sm font-bold rounded-full border border-green-500/30"
+                >Published</span
+              >
+            </div>
+          </div>
+
+          <!-- Pub 2 -->
+          <div
+            class="bg-card p-6 md:p-8 rounded-xl border-l-4 border-green-500 shadow-lg hover:-translate-y-1 transition-transform duration-300"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start justify-between flex-wrap gap-4">
+              <div class="max-w-3xl">
+                <h4 class="text-xl font-bold text-white mb-2">
+                  Full-state feedback LQR with integral gain for control of
+                  induction heating of steel billet
+                </h4>
+                <p class="text-sm text-slate-300 mb-2">
+                  Zarghoon, S., Emebu, S., Matušů, R., Belavý, C., Bartalský,
+                  L., Ďuriš, S., <strong>Husnain, S.</strong> and Martinez,
+                  C.M.
+                </p>
+                <p class="text-sm text-slate-400 font-serif italic">
+                  Engineering Science and Technology, an International Journal,
+                  55, p.101721. (2024)
+                </p>
+              </div>
+              <span
+                class="px-4 py-1.5 bg-green-500/10 text-green-400 text-sm font-bold rounded-full border border-green-500/30"
+                >Published</span
+              >
+            </div>
+          </div>
+
+          <!-- Pub 3 -->
+          <div
+            class="bg-card p-6 md:p-8 rounded-xl border-l-4 border-green-500 shadow-lg hover:-translate-y-1 transition-transform duration-300"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start justify-between flex-wrap gap-4">
+              <div class="max-w-3xl">
+                <h4 class="text-xl font-bold text-white mb-2">
+                  An Artificial Bee Colony Based PID Tuning Algorithm for
+                  Inverted Pendulum and Cart System
+                </h4>
+                <p class="text-sm text-slate-300 mb-2">
+                  <strong>S. Husnain</strong>, M. T. Riaz, M. A. Khan and M.
+                  Mazhar
+                </p>
+                <p class="text-sm text-slate-400 font-serif italic">
+                  17th International Conference on Open Source Systems and
+                  Technologies (ICOSST), IEEE. (2023)
+                </p>
+              </div>
+              <span
+                class="px-4 py-1.5 bg-green-500/10 text-green-400 text-sm font-bold rounded-full border border-green-500/30"
+                >Published</span
+              >
+            </div>
+          </div>
+
+          <!-- Pub 4 (Added from CV) -->
+          <div
+            class="bg-card p-6 md:p-8 rounded-xl border-l-4 border-green-500 shadow-lg hover:-translate-y-1 transition-transform duration-300"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start justify-between flex-wrap gap-4">
+              <div class="max-w-3xl">
+                <h4 class="text-xl font-bold text-white mb-2">
+                  Design of Optimization Methodology for Economic Dispatch of
+                  Thermal Generating Units
+                </h4>
+                <p class="text-sm text-slate-300 mb-2">
+                  Riaz, M.T., Hashmi, W.S., Ahmad, S.,
+                  <strong>Husnain, S.</strong>, Mujtaba, H., Ali, H., Atiq, S.
+                  and Qureshi, M.M.
+                </p>
+                <p class="text-sm text-slate-400 font-serif italic">
+                  5th International Conference on Energy Conservation and
+                  Efficiency (ICECE), IEEE. (2022)
+                </p>
+              </div>
+              <span
+                class="px-4 py-1.5 bg-green-500/10 text-green-400 text-sm font-bold rounded-full border border-green-500/30"
+                >Published</span
+              >
+            </div>
+          </div>
+
+          <!-- Pub 5 (Added from CV) -->
+          <div
+            class="bg-card p-6 md:p-8 rounded-xl border-l-4 border-green-500 shadow-lg hover:-translate-y-1 transition-transform duration-300"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start justify-between flex-wrap gap-4">
+              <div class="max-w-3xl">
+                <h4 class="text-xl font-bold text-white mb-2">
+                  Design and Experimental Validation of a Small-Scale Prototype
+                  Active Aerostatic Thrust Bearing
+                </h4>
+                <p class="text-sm text-slate-300 mb-2">
+                  Riaz, M.T., Rehman, W.U., Ali, H.,
+                  <strong>Husnain, S.</strong>, Jiang, G., Lodhi, E., Aaqib,
+                  S.M. and Qureshi, M.M.
+                </p>
+                <p class="text-sm text-slate-400 font-serif italic">
+                  International Conference on Computing, Electronic and
+                  Electrical Engineering (ICE Cube), IEEE. (2021)
+                </p>
+              </div>
+              <span
+                class="px-4 py-1.5 bg-green-500/10 text-green-400 text-sm font-bold rounded-full border border-green-500/30"
+                >Published</span
+              >
+            </div>
+          </div>
+
+          <!-- Pub 6 (Added from CV) -->
+          <div
+            class="bg-card p-6 md:p-8 rounded-xl border-l-4 border-green-500 shadow-lg hover:-translate-y-1 transition-transform duration-300"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start justify-between flex-wrap gap-4">
+              <div class="max-w-3xl">
+                <h4 class="text-xl font-bold text-white mb-2">
+                  The Intelligent Transportation Systems with Advanced
+                  Technology of Sensor and Network
+                </h4>
+                <p class="text-sm text-slate-300 mb-2">
+                  Riaz, M.T., Aaqib, S.M., Ahmad, S., Amin, S., Ali, H.,
+                  <strong>Husnain, S.</strong> and Riaz, S.
+                </p>
+                <p class="text-sm text-slate-400 font-serif italic">
+                  International Conference on Computing, Electronic and
+                  Electrical Engineering (ICE Cube), IEEE. (2021)
+                </p>
+              </div>
+              <span
+                class="px-4 py-1.5 bg-green-500/10 text-green-400 text-sm font-bold rounded-full border border-green-500/30"
+                >Published</span
+              >
+            </div>
+          </div>
+
+          <!-- Pub 7 -->
+          <div
+            class="bg-card p-6 md:p-8 rounded-xl border-l-4 border-blue-500 shadow-lg hover:-translate-y-1 transition-transform duration-300"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start justify-between flex-wrap gap-4">
+              <div class="max-w-3xl">
+                <h4 class="text-xl font-bold text-white mb-2">
+                  Systematic Review: 2D and 3D Kinematic Assessment of Upper
+                  Limb Motor Dysfunction in PD Patients and its Correlation with
+                  Clinical Outcome Measures
+                </h4>
+                <p class="text-sm text-slate-300">
+                  <strong>Husnain, S.</strong>, Hafeez, A.
+                </p>
+              </div>
+              <span
+                class="px-4 py-1.5 bg-blue-500/10 text-blue-400 text-sm font-bold rounded-full border border-blue-500/30"
+                >Accepted</span
+              >
+            </div>
+          </div>
+
+          <!-- Pub 8 -->
+          <div
+            class="bg-card p-6 md:p-8 rounded-xl border-l-4 border-yellow-500 shadow-lg hover:-translate-y-1 transition-transform duration-300"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start justify-between flex-wrap gap-4">
+              <div class="max-w-3xl">
+                <h4 class="text-xl font-bold text-white mb-2">
+                  A Comparison of H-infinity and ADRC for a MIMO System with
+                  Uncertainty
+                </h4>
+                <p class="text-sm text-slate-300">
+                  S. Saeed, <strong>S. Husnain</strong>
+                </p>
+              </div>
+              <span
+                class="px-4 py-1.5 bg-yellow-500/10 text-yellow-400 text-sm font-bold rounded-full border border-yellow-500/30"
+                >In Review</span
+              >
+            </div>
+          </div>
+
+          <!-- Pub 9 (Added from CV) -->
+          <div
+            class="bg-card p-6 md:p-8 rounded-xl border-l-4 border-yellow-500 shadow-lg hover:-translate-y-1 transition-transform duration-300"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start justify-between flex-wrap gap-4">
+              <div class="max-w-3xl">
+                <h4 class="text-xl font-bold text-white mb-2">
+                  Development of power optimized Energy Saving Fan with
+                  Sensorless FOC Control
+                </h4>
+                <p class="text-sm text-slate-300">
+                  S. Saeed, <strong>S. Husnain</strong>, S. Emebu
+                </p>
+              </div>
+              <span
+                class="px-4 py-1.5 bg-yellow-500/10 text-yellow-400 text-sm font-bold rounded-full border border-yellow-500/30"
+                >In Review</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- LINKED FOOTER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Local JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

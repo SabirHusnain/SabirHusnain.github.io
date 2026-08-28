@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabir Husnain | Mechatronics & Control Engineer</title>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Outfit", "sans-serif"],
+            },
+            colors: {
+              dark: "#0f172a",
+              darker: "#020617",
+              card: "#1e293b",
+              primary: "#06b6d4",
+              secondary: "#3b82f6",
+            },
+            animation: {
+              blob: "blob 7s infinite",
+            },
+            keyframes: {
+              blob: {
+                "0%": { transform: "translate(0px, 0px) scale(1)" },
+                "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                "100%": { transform: "translate(0px, 0px) scale(1)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-darker text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white"
+  >
+    <!-- LINKED NAVBAR -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section (Unchanged layout, but fully aligned) -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
+    >
+      <!-- Canvas Background for Network Animation -->
+      <canvas
+        id="hero-canvas"
+        class="absolute inset-0 w-full h-full z-0 opacity-40"
+      ></canvas>
+
+      <!-- Ambient background blobs -->
+      <div
+        class="absolute top-1/4 left-1/4 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob z-0"
+      ></div>
+      <div
+        class="absolute top-1/3 right-1/4 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000 z-0"
+      ></div>
+
+      <div
+        class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left flex flex-col md:flex-row items-center"
+      >
+        <div class="md:w-3/5" data-aos="fade-right" data-aos-duration="1000">
+          <div
+            class="inline-block px-4 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-primary font-medium text-sm mb-6 shadow-lg backdrop-blur-sm"
+          >
+            <i class="fas fa-robot mr-2"></i> Mechatronics & Control Engineer
+          </div>
+          <h1
+            class="text-5xl md:text-7xl font-heading font-extrabold text-white leading-tight mb-4"
+          >
+            Hi, I'm <br /><span class="text-gradient">Sabir Husnain</span>
+          </h1>
+          <p
+            class="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed"
+          >
+            Research Scientist bridging the gap between mechanical design,
+            control systems, and deep learning to build the next generation of
+            intelligent robotic systems.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
+          >
+            <a
+              href="#projects"
+              class="px-8 py-3.5 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all transform hover:-translate-y-1 w-full sm:w-auto text-center"
+            >
+              View Research & Projects
+            </a>
+            <a
+              href="#contact"
+              class="px-8 py-3.5 bg-transparent border-2 border-slate-700 text-white font-medium rounded-full hover:border-primary hover:text-primary transition-all w-full sm:w-auto text-center"
+            >
+              Get In Touch
+            </a>
+          </div>
+
+          <div
+            class="mt-10 flex items-center justify-center md:justify-start space-x-6 text-2xl"
+          >
+            <a
+              href="https://github.com/SabirHusnain"
+              target="_blank"
+              class="text-slate-400 hover:text-white transition-colors"
+              title="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://linkedin.com/in/sabir-husnain-awan"
+              target="_blank"
+              class="text-slate-400 hover:text-[#0077b5] transition-colors"
+              title="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="mailto:shusnain.awan@gmail.com"
+              class="text-slate-400 hover:text-rose-500 transition-colors"
+              title="Email"
+            >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="md:w-2/5 mt-16 md:mt-0 relative"
+          data-aos="fade-left"
+          data-aos-duration="1200"
+          data-aos-delay="200"
+        >
+          <!-- Decorative element -->
+          <div class="relative w-64 h-64 md:w-96 md:h-96 mx-auto">
+            <div
+              class="absolute inset-0 border-2 border-primary rounded-full animate-[spin_10s_linear_infinite] border-dashed opacity-50"
+            ></div>
+            <div
+              class="absolute inset-4 border-2 border-secondary rounded-full animate-[spin_15s_linear_infinite_reverse] border-dotted opacity-50"
+            ></div>
+            <div
+              class="absolute inset-0 flex items-center justify-center bg-card rounded-full overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.15)] z-10 border border-slate-700 p-8"
+            >
+              <i
+                class="fas fa-microchip text-7xl md:text-9xl text-slate-600 opacity-50"
+              ></i>
+            </div>
+            <!-- Stats Badge -->
+            <div
+              class="absolute bottom-0 right-0 bg-dark p-4 rounded-xl border border-slate-700 shadow-xl z-20 flex items-center space-x-3 glass"
+            >
+              <div class="text-primary text-3xl font-bold font-heading">5+</div>
+              <div class="text-xs text-slate-300 leading-tight">
+                Years<br />Experience
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <a
+          href="#about"
+          class="text-slate-500 hover:text-primary transition-colors"
+        >
+          <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section (Aligned with items-stretch) -->
+    <section
+      id="about"
+      class="py-24 bg-dark relative z-10 border-t border-slate-800/50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-sm font-bold text-primary tracking-widest uppercase mb-2"
+          >
+            Introduction
+          </h2>
+          <h3 class="text-3xl md:text-4xl font-heading font-bold text-white">
+            About Me
+          </h3>
+          <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+          <div
+            class="bg-card p-8 rounded-2xl border border-slate-700/50 shadow-xl flex-1 flex flex-col h-full"
+            data-aos="fade-right"
+          >
+            <h4 class="text-2xl font-heading font-semibold text-white mb-4">
+              Professional Summary
+            </h4>
+            <p class="text-slate-400 mb-4 leading-relaxed">
+              Passionate and driven Mechatronics and Control Engineer with a
+              strong academic background. My expertise spans across
+              diverse engineering fields, including mechanical, electronics,
+              control systems, embedded systems, robotics, computer vision, and
+              machine learning.
+            </p>
+            <p class="text-slate-400 leading-relaxed mb-auto">
+              My true fascination lies in the domains of control, robotics,
+              computer vision, and machine learning where I aspire to become a
+              dedicated research scientist contributing to cutting-edge
+              technology advancements.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+              <div
+                class="p-4 bg-dark rounded-xl border border-slate-700/50 border-l-4 border-l-secondary"
+              >
+                <h5 class="text-white font-semibold mb-1">
+                  PhD in Electrical Engineering
+                </h5>
+                <p class="text-xs text-slate-400 mt-1">
+                  University of Vermont.
+                </p>
+              </div>
+              <div
+                class="p-4 bg-dark rounded-xl border border-slate-700/50 border-l-4 border-l-primary"
+              >
+                <h5 class="text-white font-semibold mb-1">
+                  BSc in Mechatronics & Control Engineering
+                </h5>
+                <p class="text-xs text-slate-400 mt-1">
+                  UET Lahore (Honours).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col h-full bg-card p-8 rounded-2xl border border-slate-700/50 shadow-xl"
+            data-aos="fade-left"
+          >
+            <h4 class="text-2xl font-heading font-semibold text-white mb-6">
+              Research Interests
+            </h4>
+            <div class="space-y-4 mb-auto">
+              <div
+                class="flex items-start bg-dark p-4 rounded-xl border border-slate-700/30 hover:border-primary/50 transition-colors"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mr-4"
+                >
+                  <i class="fas fa-robot text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h5 class="text-white font-medium text-lg">
+                    Robotics
+                  </h5>
+                  <p class="text-sm text-slate-400 mt-1">
+                    Design, Control, Manipulation, Perception and Training.
+                    Autonomous Vehicles, Unmanned Aerial Robots.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start bg-dark p-4 rounded-xl border border-slate-700/30 hover:border-secondary/50 transition-colors"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0 mr-4"
+                >
+                  <i class="fas fa-project-diagram text-secondary text-xl"></i>
+                </div>
+                <div>
+                  <h5 class="text-white font-medium text-lg">
+                    Control Systems
+                  </h5>
+                  <p class="text-sm text-slate-400 mt-1">
+                    Robust and Adaptive Control Systems, Non-Linear Control
+                    Design for MIMO Systems.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start bg-dark p-4 rounded-xl border border-slate-700/30 hover:border-purple-500/50 transition-colors"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0 mr-4"
+                >
+                  <i class="fas fa-brain text-purple-400 text-xl"></i>
+                </div>
+                <div>
+                  <h5 class="text-white font-medium text-lg">
+                    Deep Learning
+                  </h5>
+                  <p class="text-sm text-slate-400 mt-1">
+                    Intelligent Control, Reinforcement Learning, Computer
+                    Vision, and Robotic Manipulation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section (Expanded and Aligned) -->
+    <section
+      id="skills"
+      class="py-24 bg-darker relative z-10 border-t border-slate-800/50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-sm font-bold text-primary tracking-widest uppercase mb-2"
+          >
+            Capabilities
+          </h2>
+          <h3 class="text-3xl md:text-4xl font-heading font-bold text-white">
+            Technical Arsenal
+          </h3>
+          <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
+        >
+          <div
+            class="bg-card p-6 rounded-2xl border border-slate-700/50 h-full flex flex-col hover:-translate-y-1 transition-transform duration-300"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <h4
+              class="text-xl font-heading font-semibold text-white mb-4 flex items-center border-b border-slate-700 pb-2"
+            >
+              <i class="fas fa-cogs text-primary mr-3"></i> Robotics & AI
+            </h4>
+            <div class="flex flex-wrap gap-2 mb-auto">
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >ROS/ROS2</span
+              >
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >Motion Planning</span
+              >
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >CoppeliaSim & Webots</span
+              >
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >Deep Learning</span
+              >
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >Reinforcement Learning</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-card p-6 rounded-2xl border border-slate-700/50 h-full flex flex-col hover:-translate-y-1 transition-transform duration-300"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h4
+              class="text-xl font-heading font-semibold text-white mb-4 flex items-center border-b border-slate-700 pb-2"
+            >
+              <i class="fas fa-sliders-h text-secondary mr-3"></i> Control
+              Systems
+            </h4>
+            <div class="flex flex-wrap gap-2 mb-auto">
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >Dynamic Modelling</span
+              >
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >PID, LQR, LQI</span
+              >
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >Robust Control (H∞)</span
+              >
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >Adaptive Control (MPC, ADRC)</span
+              >
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >MATLAB / Simulink</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-card p-6 rounded-2xl border border-slate-700/50 h-full flex flex-col hover:-translate-y-1 transition-transform duration-300"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h4
+              class="text-xl font-heading font-semibold text-white mb-4 flex items-center border-b border-slate-700 pb-2"
+            >
+              <i class="fas fa-microchip text-purple-400 mr-3"></i> Embedded &
+              Electronics
+            </h4>
+            <div class="flex flex-wrap gap-2 mb-auto">
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >ARM, STM32, ESP32</span
+              >
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >RTOS, ESP-IDF</span
+              >
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >FPGA</span
+              >
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >Embedded Linux (Yocto)</span
+              >
+              <span
+                class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                >PCB Design (Altium, KiCAD)</span
+              >
+            </div>
+          </div>
+
+          <!-- Newly Added: Power Skills & Certifications from CV -->
+          <div
+            class="bg-card p-6 rounded-2xl border border-slate-700/50 h-full flex flex-col hover:-translate-y-1 transition-transform duration-300 lg:col-span-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4
+                  class="text-xl font-heading font-semibold text-white mb-4 flex items-center border-b border-slate-700 pb-2"
+                >
+                  <i class="fas fa-certificate text-yellow-400 mr-3"></i>
+                  Certifications & Achievements
+                </h4>
+                <ul
+                  class="list-disc list-outside ml-4 text-slate-300 space-y-2 text-sm"
+                >
+                  <li>
+                    Deep Learning Specialization (Stanford University Online, 5
+                    Certifications)
+                  </li>
+                  <li>
+                    Machine Learning Specialization (Stanford University Online,
+                    3 Certifications)
+                  </li>
+                  <li>
+                    Robotics Specialization (University of Pennsylvania, 5
+                    Certifications)
+                  </li>
+                  <li>
+                    Modern Robotics Specialization (Northwestern University, 6
+                    Certifications)
+                  </li>
+                  <li>
+                    Ignite project funding for development of BIGKAT
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4
+                  class="text-xl font-heading font-semibold text-white mb-4 flex items-center border-b border-slate-700 pb-2"
+                >
+                  <i class="fas fa-users text-green-400 mr-3"></i> Power Skills
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                    >Public speaking</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                    >Excellent communication</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                    >Presentation skills</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                    >Team lead</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                    >Problem solving</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-dark text-slate-300 text-sm rounded-full border border-slate-600"
+                    >Proficient, Imaginative visualization</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section (Unchanged Timeline Design) -->
+    <section
+      id="experience"
+      class="py-24 bg-dark relative z-10 border-t border-slate-800/50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-sm font-bold text-primary tracking-widest uppercase mb-2"
+          >
+            Career Journey
+          </h2>
+          <h3 class="text-3xl md:text-4xl font-heading font-bold text-white">
+            Work Experience
+          </h3>
+          <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div
+          class="max-w-3xl mx-auto border-l-2 border-slate-700 pl-8 ml-4 md:ml-auto"
+        >
+          <!-- Experience Items -->
+          <div class="relative mb-12 timeline-dot" data-aos="fade-up">
+            <span class="text-primary font-medium text-sm block mb-1"
+              >Feb 2024 - Present | Italy</span
+            >
+            <h4 class="text-xl font-bold text-white mb-1">
+              Design Engineer Team Lead
+            </h4>
+            <h5 class="text-slate-400 font-medium mb-3">
+              Landlele SRL
+            </h5>
+            <ul
+              class="list-disc list-outside ml-4 text-slate-300 space-y-2 text-sm"
+            >
+              <li>
+                Development of hybrid solar inverters, charge controllers and
+                green energy devices.
+              </li>
+              <li>
+                Managing and leading a team of engineers for device
+                development.
+              </li>
+              <li>
+                Conducting R&D to explore solutions for engineering problems
+                faced by the company.
+              </li>
+            </ul>
+          </div>
+
+          <div class="relative mb-12 timeline-dot" data-aos="fade-up">
+            <span class="text-primary font-medium text-sm block mb-1"
+              >Nov 2023 - Present | Altamura, Italy</span
+            >
+            <h4 class="text-xl font-bold text-white mb-1">
+              Chief Mechatronics Engineer
+            </h4>
+            <h5 class="text-slate-400 font-medium mb-3">
+              SD Companies SRL
+            </h5>
+            <ul
+              class="list-disc list-outside ml-4 text-slate-300 space-y-2 text-sm"
+            >
+              <li>
+                Development of technical plans and execution of industrial
+                projects.
+              </li>
+              <li>
+                Leading R&D for higher efficiency and better project
+                designs.
+              </li>
+            </ul>
+          </div>
+
+          <div class="relative mb-12 timeline-dot" data-aos="fade-up">
+            <span class="text-primary font-medium text-sm block mb-1"
+              >Oct 2022 - Feb 2023 | Dubai, UAE</span
+            >
+            <h4 class="text-xl font-bold text-white mb-1">
+              Automation, Control Engineer
+            </h4>
+            <h5 class="text-slate-400 font-medium mb-3">
+              Hydroequip LLC
+            </h5>
+            <ul
+              class="list-disc list-outside ml-4 text-slate-300 space-y-2 text-sm"
+            >
+              <li>
+                Programmed PLCs for hydraulic & pneumatics-based systems
+                control.
+              </li>
+              <li>
+                Developed, tested, and maintained precise robotic manipulators
+                with innovative control algorithms.
+              </li>
+              <li>
+                Implemented real-time monitoring and predictive maintenance
+                protocols.
+              </li>
+            </ul>
+          </div>
+
+          <div class="relative timeline-dot" data-aos="fade-up">
+            <span class="text-primary font-medium text-sm block mb-1"
+              >May 2021 - Present | Self Employed</span
+            >
+            <h4 class="text-xl font-bold text-white mb-1">
+              Mechatronics Engineer & Founder
+            </h4>
+            <h5 class="text-slate-400 font-medium mb-3">
+              EnvisionPath
+            </h5>
+            <ul
+              class="list-disc list-outside ml-4 text-slate-300 space-y-2 text-sm"
+            >
+              <li>
+                Machine Vision, Artificial Intelligence, and Robotics design &
+                control.
+              </li>
+              <li>
+                Embedded System Development and Control System Development[cite:
+                1].
+              </li>
+              <li>
+                Mechanical Design, Analysis, CAD/CAM, and full-stack software
+                application development.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section (Aligned with items-stretch) -->
+    <section
+      id="projects"
+      class="py-24 bg-darker relative z-10 border-t border-slate-800/50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-sm font-bold text-primary tracking-widest uppercase mb-2"
+          >
+            Portfolio
+          </h2>
+          <h3 class="text-3xl md:text-4xl font-heading font-bold text-white">
+            Academic & Research Projects
+          </h3>
+          <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
+        >
+          <div
+            class="bg-card rounded-2xl overflow-hidden border border-slate-700/50 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group flex flex-col h-full shadow-xl"
+            data-aos="fade-up"
+          >
+            <div
+              class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fas fa-walking text-6xl text-slate-700 group-hover:text-primary transition-colors duration-300 z-10"
+              ></i>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-0"
+              ></div>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h4 class="text-xl font-bold text-white mb-2">
+                BIGKAT (Motion Capture)
+              </h4>
+              <p class="text-sm text-slate-400 mb-6 flex-grow">
+                Low-cost, portable motion capture system for gross motor
+                movement assessment. Uses IR markers, ML models to analyze
+                Bradykinesia.
+              </p>
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Python</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Machine Learning</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-card rounded-2xl overflow-hidden border border-slate-700/50 hover:border-secondary/50 transition-all duration-300 hover:-translate-y-2 group flex flex-col h-full shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fas fa-robot text-6xl text-slate-700 group-hover:text-secondary transition-colors duration-300 z-10"
+              ></i>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-0"
+              ></div>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h4 class="text-xl font-bold text-white mb-2">
+                RL Humanoid Robot Control
+              </h4>
+              <p class="text-sm text-slate-400 mb-6 flex-grow">
+                Simulation of humanoid robot control and path generation
+                employing reinforcement-learning to train the control policy,
+                enabling real-time adaptation.
+              </p>
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Reinforcement Learning</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Simulation</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-card rounded-2xl overflow-hidden border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-2 group flex flex-col h-full shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fas fa-car-side text-6xl text-slate-700 group-hover:text-purple-400 transition-colors duration-300 z-10"
+              ></i>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-card to-transparent z-0"
+              ></div>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h4 class="text-xl font-bold text-white mb-2">
+                Autonomous Mobile Robot
+              </h4>
+              <p class="text-sm text-slate-400 mb-6 flex-grow">
+                Differential drive robot with feed-forward neural network and
+                PID control. Employed genetic algorithm to optimize NN
+                parameters for optimized path planning.
+              </p>
+              <div class="mt-auto">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >Neural Networks</span
+                  >
+                  <span
+                    class="text-xs px-2.5 py-1 bg-dark rounded border border-slate-700 text-slate-300"
+                    >MATLAB</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a
+            href="projects.html"
+            class="inline-flex items-center text-primary hover:text-white font-medium transition-colors"
+          >
+            View full portfolio page <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section
+      id="publications"
+      class="py-24 bg-dark relative z-10 border-t border-slate-800/50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-sm font-bold text-primary tracking-widest uppercase mb-2"
+          >
+            Research
+          </h2>
+          <h3 class="text-3xl md:text-4xl font-heading font-bold text-white">
+            Publications
+          </h3>
+          <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="space-y-6 max-w-4xl mx-auto">
+          <div
+            class="bg-card p-6 rounded-xl border-l-4 border-primary shadow-lg"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start justify-between flex-wrap gap-4">
+              <div>
+                <h4 class="text-lg font-bold text-white mb-2">
+                  Fractional Order Modeling and Control of an Articulated
+                  Robotic Arm
+                </h4>
+                <p class="text-sm text-slate-300 mb-2">
+                  <strong>S. Husnain</strong> and R. Abdulkader
+                </p>
+              </div>
+              <span
+                class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full border border-green-500/30"
+                >Published</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-card p-6 rounded-xl border-l-4 border-primary shadow-lg"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start justify-between flex-wrap gap-4">
+              <div>
+                <h4 class="text-lg font-bold text-white mb-2">
+                  Full-state feedback LQR with integral gain for control of
+                  induction heating of steel billet
+                </h4>
+                <p class="text-sm text-slate-300 mb-2">
+                  Zarghoon, S. et al., <strong>Husnain, S.</strong> and
+                  Martinez, C.M.
+                </p>
+              </div>
+              <span
+                class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full border border-green-500/30"
+                >Published</span
+              >
+            </div>
+          </div>
+
+          <!-- Newly Added Publications Summary -->
+          <div
+            class="bg-card p-6 rounded-xl border-l-4 border-primary shadow-lg"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start justify-between flex-wrap gap-4">
+              <div>
+                <h4 class="text-lg font-bold text-white mb-2">
+                  Design of Optimization Methodology for Economic Dispatch of
+                  Thermal Generating Units
+                </h4>
+                <p class="text-sm text-slate-300 mb-2">
+                  Riaz, M.T., et al., <strong>Husnain, S.</strong>
+                </p>
+              </div>
+              <span
+                class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full border border-green-500/30"
+                >Published (IEEE)</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a
+            href="research.html"
+            class="inline-flex items-center text-primary hover:text-white font-medium transition-colors"
+          >
+            View full research & publications page
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (Aligned with new styling) -->
+    <section
+      id="contact"
+      class="py-24 bg-darker relative z-10 border-t border-slate-800/50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-sm font-bold text-primary tracking-widest uppercase mb-2"
+          >
+            Connect
+          </h2>
+          <h3 class="text-3xl md:text-4xl font-heading font-bold text-white">
+            Get In Touch
+          </h3>
+          <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div data-aos="fade-right">
+            <h4 class="text-2xl font-bold text-white mb-6">
+              Contact Information
+            </h4>
+            <p class="text-slate-400 mb-8">
+              I am open to discussing research collaborations, consulting
+              opportunities, or PhD positions in Robotics, Control Systems, and
+              Machine Learning.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mr-4 flex-shrink-0"
+                >
+                  <i class="fas fa-envelope text-xl"></i>
+                </div>
+                <div class="pt-1">
+                  <h5 class="text-white font-medium">Email</h5>
+                  <a
+                    href="mailto:shusnain.awan@gmail.com"
+                    class="text-slate-400 hover:text-primary text-sm"
+                    >shusnain.awan@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary mr-4 flex-shrink-0"
+                >
+                  <i class="fas fa-phone-alt text-xl"></i>
+                </div>
+                <div class="pt-1">
+                  <h5 class="text-white font-medium">Phone</h5>
+                  <p class="text-slate-400 text-sm">
+                    +1 (802) 399 0771 <br/>
+                    +92 (305) 4526 831
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-left">
+            <form
+              class="bg-card p-8 rounded-2xl border border-slate-700/50 shadow-xl"
+              onsubmit="
+                event.preventDefault();
+                document
+                  .getElementById('success-msg-home')
+                  .classList.remove('hidden');
+              "
+            >
+              <div class="mb-6">
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-slate-300 mb-2"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  class="w-full bg-dark border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-slate-300 mb-2"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  class="w-full bg-dark border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-slate-300 mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  required
+                  class="w-full bg-dark border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary hover:bg-cyan-600 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-lg shadow-cyan-500/30"
+              >
+                Send Message
+              </button>
+
+              <div
+                id="success-msg-home"
+                class="hidden mt-4 p-3 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-sm text-center"
+              >
+                Message demo sent successfully!
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LINKED FOOTER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Local JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
