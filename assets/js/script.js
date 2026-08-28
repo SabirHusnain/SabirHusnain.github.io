@@ -38,7 +38,7 @@ async function initApp() {
     AOS.refresh();
   }
 
-  // 4. Initialize Mobile Menu (Now that it actually exists in the DOM)
+  // 4. Initialize Mobile Menu
   const mobileBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
 
@@ -69,7 +69,7 @@ async function initApp() {
     });
   }
 
-  // 6. Home Page Canvas Animation (Made crash-proof for internal pages)
+  // 6. Home Page Canvas Animation
   const canvas = document.getElementById("hero-canvas");
   if (canvas) {
     const ctx = canvas.getContext("2d");
@@ -142,6 +142,46 @@ async function initApp() {
     initParticles();
     animateCanvas();
   }
+
+  // 7. Formspree AJAX Submission Handler
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", async function (event) {
+      event.preventDefault(); // Stop the browser from redirecting
+
+      const data = new FormData(contactForm);
+
+      // Find the success message div (handles both home and contact pages)
+      const successMsg =
+        document.getElementById("success-msg") ||
+        document.getElementById("success-msg-home");
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: contactForm.method,
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          // Show success message and clear the form
+          if (successMsg) successMsg.classList.remove("hidden");
+          contactForm.reset();
+
+          // Optional: Hide the message again after 5 seconds
+          setTimeout(() => {
+            if (successMsg) successMsg.classList.add("hidden");
+          }, 5000);
+        } else {
+          alert("Oops! There was a problem submitting your form.");
+        }
+      } catch (error) {
+        alert("Oops! There was a problem submitting your form.");
+      }
+    });
+  }
 }
 
 // Bulletproof event listener: Runs correctly whether the browser loads the script early or late
@@ -149,45 +189,4 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initApp);
 } else {
   initApp();
-}
-
-// --- Formspree AJAX Submission Handler ---
-const contactForm = document.getElementById("contact-form");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", async function (event) {
-    event.preventDefault(); // Stop the browser from redirecting
-
-    const data = new FormData(contactForm);
-
-    // Find the success message div (handles both home and contact pages)
-    const successMsg =
-      document.getElementById("success-msg") ||
-      document.getElementById("success-msg-home");
-
-    try {
-      const response = await fetch(contactForm.action, {
-        method: contactForm.method,
-        body: data,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      if (response.ok) {
-        // Show success message and clear the form
-        if (successMsg) successMsg.classList.remove("hidden");
-        contactForm.reset();
-
-        // Optional: Hide the message again after 5 seconds
-        setTimeout(() => {
-          if (successMsg) successMsg.classList.add("hidden");
-        }, 5000);
-      } else {
-        alert("Oops! There was a problem submitting your form.");
-      }
-    } catch (error) {
-      alert("Oops! There was a problem submitting your form.");
-    }
-  });
 }
