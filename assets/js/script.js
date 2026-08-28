@@ -137,6 +137,7 @@ async function initApp() {
         }
       }
       requestAnimationFrame(animateCanvas);
+      
     }
 
     initParticles();
